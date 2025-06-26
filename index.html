@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Success | A Comprehensive Guide</title>
+    
+    <!-- Google Fonts for Elegant Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* CSS Variables for Easy Theme Customization */
+        :root {
+            --primary-color: #4A2E5B; /* Dark Purple */
+            --secondary-color: #FACC15; /* Yellow/Gold */
+            --bg-light: #F8F9FA;      /* Off-white */
+            --bg-dark: #4A2E5B;       /* Dark Purple for footer etc. */
+            --text-dark: #212529;      /* Dark text for light backgrounds */
+            --text-light: #F8F9FA;     /* Light text for dark backgrounds */
+            --white-color: #ffffff;
+            --font-serif: 'Lora', serif;
+            --font-sans: 'Inter', sans-serif;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* General Body & Scroll Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Reusable Container */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background: var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-logo {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .nav-cart i {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-cart i:hover {
+             color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 70px; /* Offset for fixed header */
+            background-color: var(--primary-color);
+            background-image: url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1740&amp;q=80&quot'); /* Placeholder background */
+            background-blend-mode: overlay;
+            background-size: cover;
+            background-position: center;
+            color: var(--text-light);
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6rem 0;
+            min-height: calc(100vh - 70px);
+        }
+        
+        .hero-text {
+            max-width: 50%;
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            max-width: 500px;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .hero-book-cover {
+            perspective: 1000px;
+        }
+        
+        .hero-book-cover img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        /* General Section Styling */
+        .section {
+            padding: 6rem 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header .line {
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 0 auto 1rem auto;
+            border-radius: 2px;
+        }
+        
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #6c757d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* === NEW MODULAR BUTTON STYLES === */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            box-shadow: 0 4px 15px rgba(250, 204, 21, 0.3);
+        }
+        .btn-primary:hover {
+            background-color: #eab308;
+        }
+
+        .btn-secondary {
+            background-color: var(--white-color);
+            color: var(--text-dark);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .btn-secondary:hover {
+            background-color: #f1f1f1;
+        }
+
+        .btn-dark {
+            background: var(--primary-color);
+            color: var(--text-light);
+            box-shadow: 0 4px 15px rgba(74, 46, 91, 0.2);
+        }
+        .btn-dark:hover {
+            background-color: #3b244a;
+        }
+
+        .btn-amazon {
+            background-color: #FF9900;
+            color: #111;
+        }
+        .btn-amazon:hover {
+            background-color: #e68a00;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+        
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: var(--white-color);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .feature-card .icon {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .get-copy-btn {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+        
+        .about-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-text .checklist {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .about-text .checklist li {
+            display: flex;
+            align-items: center;
+        }
+        
+        .about-text .checklist i {
+            color: var(--secondary-color);
+            margin-right: 0.5rem;
+        }
+        
+        .about-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Chapters/Learn Section */
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .chapter-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            background: var(--white-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+        
+        .chapter-item .number {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: var(--text-light);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-weight: 700;
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: var(--white-color);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+            text-align: center;
+            border-top: 5px solid transparent;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .pricing-card.digital { border-color: var(--secondary-color); }
+        .pricing-card.paperback { border-color: var(--primary-color); }
+
+        .pricing-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            background: var(--primary-color);
+            color: var(--text-light);
+            padding: 0.5rem 1rem;
+            margin: -2.5rem -2.5rem 2rem -2.5rem;
+        }
+
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+        
+        .pricing-card .features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+            flex-grow: 1; /* Pushes button to the bottom */
+        }
+        
+        .pricing-card .features li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .pricing-card .features i {
+            color: var(--secondary-color);
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        .cta-footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+        }
+        
+        .cta-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(74, 46, 91, 0.8); /* Dark purple overlay */
+            z-index: 1;
+        }
+
+        .cta-footer .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .main-footer {
+            background: #23152d;
+            color: #ccc;
+            padding-top: 4rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid #3b244a;
+        }
+        
+        .footer-logo {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--white-color);
+        }
+        
+        .footer-socials a {
+            color: #ccc;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-socials a:hover { color: var(--secondary-color); }
+        
+        .footer-links h4 {
+            font-size: 1.2rem;
+            color: var(--white-color);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links ul { list-style: none; }
+        .footer-links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links ul li a:hover { color: var(--secondary-color); }
+        
+        .copyright {
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Reveal on Scroll Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content { flex-direction: column; text-align: center; gap: 4rem; }
+            .hero-text { max-width: 100%; }
+            .features-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.8rem; }
+            .nav-menu { display: none; } /* Simple hiding for demo */
+            .features-grid, .chapters-grid, .pricing-grid, .footer-grid { grid-template-columns: 1fr; }
+            .about-content { flex-direction: column; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#" class="nav-logo">Financial Success</a>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#chapters" class="nav-link">Chapters</a></li>
+            </ul>
+            <a href="#pricing" class="nav-cart"><i class="fas fa-shopping-cart"></i></a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-content container">
+                <div class="hero-text reveal is-visible">
+                    <h1 class="hero-title">Steps to Become Financially Successful</h1>
+                    <p class="hero-subtitle">Your comprehensive guide to building wealth, managing finances, and securing a prosperous future.</p>
+                    <div class="hero-buttons">
+                        <a href="#pricing" class="btn btn-primary">Buy Now</a>
+                        <a href="#about" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-book-cover reveal is-visible" style="transition-delay: 200ms;">
+                    <img src="https://m.media-amazon.com/images/I/51WSUD0-nTL._SL1499_.jpg" alt="Book Cover for Steps to Become Financially Successful">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="line"></div>
+                    <h2 class="section-title">Transform Your Financial Future</h2>
+                    <p class="section-subtitle">Discover the key strategies that have helped thousands achieve financial independence and security.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card reveal" style="transition-delay: 100ms;">
+                        <div class="icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Smart Investment Strategies</h3>
+                        <p>Learn proven investment approaches that minimize risk while maximizing returns for long-term wealth building.</p>
+                    </div>
+                    <div class="feature-card reveal" style="transition-delay: 200ms;">
+                        <div class="icon"><i class="fas fa-wallet"></i></div>
+                        <h3>Effective Budgeting</h3>
+                        <p>Master practical budgeting techniques that free up cash flow and create opportunities for wealth accumulation.</p>
+                    </div>
+                    <div class="feature-card reveal" style="transition-delay: 300ms;">
+                        <div class="icon"><i class="fas fa-shield-halved"></i></div>
+                        <h3>Financial Protection</h3>
+                        <p>Discover essential strategies to protect your assets and secure your family's financial future against unexpected events.</p>
+                    </div>
+                </div>
+                <div class="get-copy-btn reveal">
+                    <a href="#pricing" class="btn btn-dark">Get Your Copy Today</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About The Book Section -->
+        <section id="about" class="section" style="background-color: var(--white-color);">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-image reveal">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1026&q=80" alt="Author working on finances">
+                    </div>
+                    <div class="about-text reveal" style="transition-delay: 200ms;">
+                        <h2 class="section-title" style="text-align: left;">About The Book</h2>
+                        <p><strong>Steps to Become Financially Successful</strong> is a comprehensive guide that takes you through a proven system for building wealth, regardless of your current financial situation. This book breaks down complex financial concepts into easy-to-understand steps that anyone can follow.</p>
+                        <ul class="checklist">
+                            <li><i class="fas fa-check"></i> Step-by-step guidance</li>
+                            <li><i class="fas fa-check"></i> Practical examples</li>
+                            <li><i class="fas fa-check"></i> Actionable worksheets</li>
+                            <li><i class="fas fa-check"></i> Expert strategies</li>
+                        </ul>
+                        <div class="about-buttons">
+                            <a href="#" class="btn btn-primary">Pages of Wisdom</a>
+                            <a href="#chapters" class="btn btn-dark">View Chapters</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- What You'll Learn Section -->
+        <section id="chapters" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="line"></div>
+                    <h2 class="section-title">What You'll Learn</h2>
+                    <p class="section-subtitle">Our comprehensive guide covers everything you need to know about building and maintaining financial success.</p>
+                </div>
+                <div class="chapters-grid">
+                    <div class="chapter-item reveal"><div class="number">1</div><div><h3>Laying the Foundation - Financial Literacy</h3><p>Build your financial knowledge base and understand key concepts for long-term success.</p></div></div>
+                    <div class="chapter-item reveal"><div class="number">2</div><div><h3>Budgeting Like a Pro</h3><p>Learn how to create and maintain a budget that puts you in control of your finances.</p></div></div>
+                    <div class="chapter-item reveal"><div class="number">3</div><div><h3>Saving with Purpose</h3><p>Develop strategic saving habits that help you meet both short and long-term financial goals.</p></div></div>
+                    <div class="chapter-item reveal"><div class="number">4</div><div><h3>Crushing Debt</h3><p>Master effective techniques to eliminate debt and free yourself from financial burdens.</p></div></div>
+                    <div class="chapter-item reveal"><div class="number">5</div><div><h3>Earning More Money</h3><p>Discover multiple strategies to increase your income and accelerate your financial progress.</p></div></div>
+                    <div class="chapter-item reveal"><div class="number">6</div><div><h3>Smart Spending</h3><p>Learn how to make purchasing decisions that align with your financial goals and values.</p></div></div>
+                    <div class="chapter-item reveal"><div class="number">7</div><div><h3>Investing for Growth</h3><p>Understand different investment options and how to build a portfolio that grows your wealth.</p></div></div>
+                    <div class="chapter-item reveal"><div class="number">8</div><div><h3>Planning for the Future</h3><p>Create comprehensive plans for major life events and long-term financial security.</p></div></div>
+                    <div class="chapter-item reveal"><div class="number">9</div><div><h3>Financial Tools and Habits</h3><p>Discover the best tools and daily habits that will simplify and optimize your financial management.</p></div></div>
+                    <div class="chapter-item reveal"><div class="number">10</div><div><h3>Staying Motivated and Educated</h3><p>Learn how to maintain momentum and continuously improve your financial knowledge.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="section" style="background-color: var(--white-color);">
+             <div class="container">
+                <div class="section-header reveal">
+                    <div class="line"></div>
+                    <h2 class="section-title">Get Your Copy Today</h2>
+                    <p class="section-subtitle">Choose the format that works best for you and start your journey to financial success.</p>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card digital reveal">
+                        <h3>Digital Edition</h3>
+                        <div class="price">$19.99</div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> Instant download</li>
+                            <li><i class="fas fa-check"></i> PDF, EPUB & MOBI formats</li>
+                            <li><i class="fas fa-check"></i> Read on any device</li>
+                            <li><i class="fas fa-check"></i> All 10 chapters included</li>
+                        </ul>
+                        <a href="https://buy.stripe.com/test_14k16CgBl54a1z2bII" class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer">Add to Cart</a>
+                    </div>
+                    <div class="pricing-card paperback reveal" style="transition-delay: 200ms;">
+                        <h3>Paperback Edition</h3>
+                        <div class="price">$22.99</div>
+                         <ul class="features">
+                            <li><i class="fas fa-check"></i> Physical book</li>
+                            <li><i class="fas fa-check"></i> Premium quality print</li>
+                            <li><i class="fas fa-check"></i> All 10 chapters included</li>
+                            <li><i class="fas fa-check"></i> Ships worldwide</li>
+                        </ul>
+                        <a href="https://www.amazon.com/dp/B0F74PZGSF" class="btn btn-amazon btn-block" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- CTA Footer -->
+        <section class="section cta-footer">
+            <div class="container reveal">
+                <h2 class="section-title">Begin Your Financial Journey Today</h2>
+                <p class="section-subtitle" style="color: #e0e0e0;">Don't wait another day to take control of your financial future. The steps you take today will determine your financial reality tomorrow.</p>
+                <a href="#pricing" class="btn btn-primary" style="margin-top: 1rem;">Get Your Copy Now</a>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3 class="footer-logo">Financial Success</h3>
+                    <p>Your guide to building a secure financial future through proven strategies and expert advice.</p>
+                    <div class="footer-socials" style="margin-top: 1rem;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About the Book</a></li>
+                        <li><a href="#chapters">Chapters</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Financial Success Book. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for the fancy scroll animations -->
+    <script>
+        const scrollObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        const revealElements = document.querySelectorAll('.reveal');
+        revealElements.forEach((el) => scrollObserver.observe(el));
+    </script>
+    
+    <!-- NEW JavaScript for the 3D book cover hover effect -->
+    <script>
+        const bookCoverContainer = document.querySelector('.hero-book-cover');
+        const bookCoverImage = bookCoverContainer.querySelector('img');
+
+        // Set the intensity of the tilt effect
+        const intensity = 15;
+
+        bookCoverContainer.addEventListener('mousemove', (e) => {
+            const { width, height, left, top } = bookCoverContainer.getBoundingClientRect();
+            
+            // Calculate mouse position from the center of the element
+            const x = e.clientX - left - width / 2;
+            const y = e.clientY - top - height / 2;
+            
+            // Calculate rotation values based on mouse position
+            const rotateY = (x / (width / 2)) * intensity;
+            const rotateX = -(y / (height / 2)) * intensity;
+
+            // Apply the 3D transform to the image
+            bookCoverImage.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+        });
+
+        bookCoverContainer.addEventListener('mouseleave', () => {
+            // Reset the transform when the mouse leaves
+            bookCoverImage.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+        });
+    </script>
+</body>
+</html>
